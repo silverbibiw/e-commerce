@@ -2,6 +2,69 @@ import React, { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import Product from "../components/Product";
 
+const aside_colors = [
+  {
+    id: 1,
+    label: "Beige",
+    color: "#F3ECDB",
+  },
+  {
+    id: 2,
+    label: "Blue",
+    color: "#465BA3",
+  },
+  {
+    id: 3,
+    label: "Black",
+    color: "#000000",
+  },
+  {
+    id: 4,
+    label: "Orange",
+    color: "#F07B4E",
+  },
+  {
+    id: 5,
+    label: "Green",
+    color: "#41854D",
+  },
+  {
+    id: 6,
+    label: "Beige",
+    color: "#F3ECDB",
+  },
+  {
+    id: 7,
+    label: "Blue",
+    color: "#465BA3",
+  },
+  {
+    id: 8,
+    label: "Black",
+    color: "#000000",
+  },
+  {
+    id: 9,
+    label: "Orange",
+    color: "#F07B4E",
+  },
+  {
+    id: 10,
+    label: "Green",
+    color: "#41854D",
+  },
+  {
+    id: 11,
+    label: "Green",
+    color: "#41854D",
+  },
+  {
+    id: 12,
+    label: "Green",
+    color: "#41854D",
+  },
+];
+
 function ClothesPage() {
   const { products } = useContext(ProductContext);
 
@@ -75,27 +138,25 @@ function ClothesPage() {
                 COLOR
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 max-w-xs mx-auto md:max-w-none md:mx-0">
-                {[
-                  { color: "orange-200", name: "Beige" },
-                  { color: "blue-900", name: "Blue" },
-                  { color: "black", name: "Black" },
-                  { color: "orange-500", name: "Orange" },
-                  { color: "green-900", name: "Green" },
-                  { color: "orange-950", name: "Brown" },
-                  { color: "purple-900", name: "Purple" },
-                  { color: "yellow-400", name: "Gold" },
-                  { color: "slate-200", name: "Taupe" },
-                  { color: "white", name: "White" },
-                  { color: "pink-900", name: "Pink" },
-                  { color: "red-600", name: "Red" },
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div
-                      className={`w-8 h-8 bg-${item.color} ${
-                        index === 9 ? "border" : ""
-                      } border-slate-900 rounded`}
-                    ></div>
-                    <p>{item.name}</p>
+                {aside_colors.map((el) => (
+                  <div
+                    key={el.id}
+                    className="flex items-center gap-2 cursor-pointer"
+                  >
+                    <input
+                      disabled={true}
+                      type="color"
+                      id="colorPicker"
+                      name="colorPicker"
+                      defaultValue={el.color}
+                      className="w-[32px] h-[32px] outline-none"
+                    />
+                    <label
+                      htmlFor="colorPicker"
+                      className="cursor-pointer font-muli text-[14px] font-normal text-[#000]"
+                    >
+                      {el.label}
+                    </label>
                   </div>
                 ))}
               </div>

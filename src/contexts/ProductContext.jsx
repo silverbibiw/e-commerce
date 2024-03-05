@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const ProductContext = createContext(); // Corrected the context name
+export const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
@@ -25,4 +25,4 @@ const ProductProvider = ({ children }) => {
   );
 };
 
-export default ProductProvider; // Export the provider component
+export default ProductProvider;
