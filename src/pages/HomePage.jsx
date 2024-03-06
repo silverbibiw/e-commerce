@@ -15,7 +15,7 @@ function HomePage() {
   return (
     <section ref={mainSectionRef} className="container">
       <Hero onButtonClick={handleButtonClick} />
-      <div className="font-normal text-2xl px-44 text-center">
+      <div className="font-normal text-2xl px-44 text-center py-10">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae gravida
           cursus adipiscing viverra at tortor, egestas odio parturient. Morbi ut
